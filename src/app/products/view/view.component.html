@@ -1,0 +1,35 @@
+<!-- Button trigger modal -->
+<button class="btn btn-default" (click)="openModal()">
+    <i class="bi bi-trash-fill" style="color:red"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display': display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Suppression Produit</h4>
+                <button type="button" class="btn btn-default" aria-label="Close" (click)="closeModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <template *ngTemplateOutlet="formProduct"></template>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" (click)="closeModal()">Close</button>
+                <button type="submit" class="btn btn-success" (click)="updatearticle()">Supprimer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Form -->
+
+<ng-template #formProduct>
+    <form>
+        <div>
+            êtes vous sûr de supprimer le produit ?
+        </div>
+    </form>
+</ng-template>
